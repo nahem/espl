@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
   printf("\n", argv[i]);
   char str[] = "snake";
   char c = str[0];
-  printf("%c\n", c);
+  printf("%d\n", c);
   
   return 0;
 } 
