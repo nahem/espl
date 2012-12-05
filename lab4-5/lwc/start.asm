@@ -9,14 +9,15 @@ global strlen
 
 extern main
 _start:
-	call main
-	mov ebx,eax
-	mov eax,1
+	add 	 esp,4
+	mov	 ecx,esp
+	sub      esp,4
+	push	 ecx
+	push	 DWORD [esp+4]
+	call	 main
+	mov	 ebx,eax
+	mov	 eax,1
 	int 0x80
-	mov eax, esp
-	add eax, 4
-	push eax
-	push DWORD [esp+4]
 
 read:
 	mov eax, 3
@@ -47,17 +48,18 @@ close:
 	int 0x80
 	ret
 strlen:
-	mov eax, 0
-.L1:
-	mov ebx, DWORD [ebp+8]
-	test bl, bl
-	jne .L2
-	ret
-
+	push ebp
+	mov ebp, esp
+	mov eax, -1
 .L2:
 	add eax, 1
-	add DWORD [ebp+8], 1
-	jmp .L1
+	mov ebx, eax
+	add ebx, [ebp+8]
+	movzx ebx, BYTE [ebx]
+	test bl, bl
+	jne .L2
+	pop ebp
+	ret
 
 
 
