@@ -3,7 +3,7 @@
 #include <string.h>
 #include <assert.h>
 #include <getopt.h>
-int main(int argc, char **argv) {
+int old_main(int argc, char **argv) {
       int number = 0;
       int i;	
       int print = 1;
@@ -69,33 +69,5 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-
-
-
-
-
-
-
-  /*for ( i = 1; i < argc; i++ ){
-    if ( !strcmp(argv[i], "-h") ){ 
-      printf("OPTIONS\n");
-      printf("             -h  print a summary of options and exits.\n");
-      printf("             -x  print the checksum as a hexadecimal rather than decimal number.\n");
-      return 0;
-    }    
-    else if ( !strcmp(argv[i], "-x") ){ 
-      type = 0;
-    }
-    else {
-      file_index = i;
-    }
-      if ( type ){
-	printf("checksum: %d\n",  checksum );
-      }
-      else{
-	printf("checksum: %X\n",  checksum );
-      }
-      fclose(fp);    
-  }*/
 	
 
