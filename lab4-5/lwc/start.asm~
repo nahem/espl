@@ -18,6 +18,7 @@ _start:
 	mov	 ebx,eax
 	mov	 eax,1
 	int 0x80
+	ret
 
 read:
 	mov eax, 3
@@ -29,7 +30,7 @@ read:
 write:
 	mov eax, 4
 	mov ebx, [esp+4]
-	mov ecx, [esp+8]s
+	mov ecx, [esp+8]
 	mov edx, [esp+12]
 	int 0x80
 	ret

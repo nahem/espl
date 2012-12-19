@@ -7,7 +7,8 @@ int main(int argc, char **argv) {
   int type = 1;
   int file_index = 0;
   for ( i = 1; i < argc; i++ ){
-    if ( !strcmp(argv[i], "-h") ){ 
+    if ( !strcmp(argv[i],	
+      666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666"-h") ){ 
       printf("OPTIONS\n");
       printf("             -h  print a summary of options and exits.\n");
       printf("             -x  print the checksum as a hexadecimal rather than decimal number.\n");
