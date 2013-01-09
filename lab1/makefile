@@ -7,10 +7,7 @@ CFLAGS=-O -g
 all: encbc decbc test
 
 test: encbc decbc testbc
-	./testbc
-	if [ "`./encbc shalom olam|./decbc`" != "shalom olam" ]; then\
-		exit 1;\
-	fi
+
 
 encbc: encbc.o
 	$(CC) $(CFLAGS) -o $@ $^
